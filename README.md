@@ -2,8 +2,8 @@ A hook for react-hook-form that persists form data to storage
 
 # Examples
 
-- [Shadcn](apps/examples/app/components/examples/shadcn.tsx)
-- [Basic](https://)
+- [Shadcn](https://use-persistent-form.vercel.app/)
+- [Basic](https://use-persistent-form.vercel.app/?example=basic)
 
 # Installation
 
