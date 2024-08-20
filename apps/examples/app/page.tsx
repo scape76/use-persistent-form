@@ -7,6 +7,8 @@ interface HomeProps {
   };
 }
 
+export const dynamic = "force-static";
+
 export function generateStaticParams() {
   return [{ example: "shadcn" }, { example: "basic" }];
 }
