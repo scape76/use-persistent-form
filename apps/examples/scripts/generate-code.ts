@@ -3,14 +3,17 @@ import { codeToHtml } from "shiki";
 import fs from "fs";
 
 async function generateCode() {
-  const shadcnCode = await fs.promises.readFile("scripts/shadcn.txt", "utf-8");
+  const shadcnCode = await fs.promises.readFile(
+    "app/codes/shadcn.txt",
+    "utf-8"
+  );
 
   const shadncHtml = await codeToHtml(shadcnCode, {
     lang: "tsx",
     theme: "rose-pine",
   });
 
-  const basicCode = await fs.promises.readFile("scripts/basic.txt", "utf-8");
+  const basicCode = await fs.promises.readFile("app/codes/basic.txt", "utf-8");
 
   const basicHtml = await codeToHtml(basicCode, {
     lang: "tsx",

@@ -11,11 +11,16 @@ export function generateStaticParams() {
   return [{ example: "shadcn" }, { example: "basic" }];
 }
 
+const examples = ["shadcn", "basic"];
+
 export default async function Home({ searchParams }: HomeProps) {
-  const selectedExample = searchParams.example || "shadcn";
+  const selectedExample =
+    searchParams.example && examples.includes(searchParams.example)
+      ? searchParams.example
+      : "shadcn";
 
   const code = await fs.promises.readFile(
-    `scripts/${selectedExample}.txt`,
+    `app/codes/${selectedExample}.txt`,
     "utf-8"
   );
 
