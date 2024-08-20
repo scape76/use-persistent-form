@@ -13,16 +13,21 @@ npm install use-persistent-form
 yarn add use-persistent-form
 
 pnpm add use-persistent-form
+
+bun add use-persistent-form
 ```
 
 **OR**
 
-Copy & past the [hook](apps/packages/use-persistent-form/src/index.ts) into your app
+Copy & past the [hook](packages/use-persistent-form/src/index.ts) into your app
 
 # Usage
 
 ```tsx
 import { usePersistentForm } from "use-persistent-form";
+
+
+const ratios = [1, 16 / 9, 4 / 3];
 
 const imageGenerationSchema = z.object({
   prompt: z
