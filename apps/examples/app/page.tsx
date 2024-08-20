@@ -20,12 +20,12 @@ export default async function Home({ searchParams }: HomeProps) {
       : "shadcn";
 
   const code = await fs.promises.readFile(
-    `app/codes/${selectedExample}.txt`,
+    process.cwd() + `/app/codes/${selectedExample}.txt`,
     "utf-8"
   );
 
   const html = await fs.promises.readFile(
-    `app/generated/${selectedExample}.html`,
+    process.cwd() + `/app/generated/${selectedExample}.html`,
     "utf-8"
   );
 
