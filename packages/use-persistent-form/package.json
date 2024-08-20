@@ -1,0 +1,48 @@
+{
+  "name": "use-persistent-form",
+  "version": "1.0.0",
+  "description": "A hook for react-hook-form that persists form data to storage",
+  "keywords": [
+    "react",
+    "react-hook-form",
+    "form",
+    "storage",
+    "localStorage",
+    "sessionStorage"
+  ],
+  "author": "Danya Olekh @scape76",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scape76/use-persistent-form/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scape76/use-persistent-form.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "rm -rf dist && tsup src/index.ts --format cjs,esm --dts --target node16",
+    "preview": "vite preview"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/react": "^18",
+    "react": "19.0.0-rc-f994737d14-20240522",
+    "react-hook-form": "^7.52.2",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1"
+  },
+  "peerDependencies": {
+    "react": ">= 16.4",
+    "react-hook-form": ">= 6"
+  }
+}

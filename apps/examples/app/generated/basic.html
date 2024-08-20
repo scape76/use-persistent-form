@@ -1,0 +1,100 @@
+<pre class="shiki rose-pine" style="background-color:#191724;color:#e0def4" tabindex="0"><code><span class="line"><span style="color:#F6C177">"use client"</span><span style="color:#908CAA">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#31748F">import </span><span style="color:#908CAA">{</span><span style="color:#E0DEF4;font-style:italic"> toast</span><span style="color:#908CAA"> }</span><span style="color:#31748F"> from </span><span style="color:#F6C177">"sonner"</span><span style="color:#908CAA">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#31748F">import </span><span style="color:#908CAA">{</span><span style="color:#E0DEF4;font-style:italic"> usePersistentForm</span><span style="color:#908CAA"> }</span><span style="color:#31748F"> from </span><span style="color:#F6C177">"use-persistent-form"</span><span style="color:#908CAA">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#31748F">type</span><span style="color:#9CCFD8"> Inputs</span><span style="color:#31748F"> =</span><span style="color:#908CAA"> {</span></span>
+<span class="line"><span style="color:#EBBCBA;font-style:italic">  name</span><span style="color:#31748F">:</span><span style="color:#9CCFD8"> string</span><span style="color:#908CAA">;</span></span>
+<span class="line"><span style="color:#EBBCBA;font-style:italic">  email</span><span style="color:#31748F">:</span><span style="color:#9CCFD8"> string</span><span style="color:#908CAA">;</span></span>
+<span class="line"><span style="color:#EBBCBA;font-style:italic">  message</span><span style="color:#31748F">:</span><span style="color:#9CCFD8"> string</span><span style="color:#908CAA">;</span></span>
+<span class="line"><span style="color:#908CAA">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#31748F">export</span><span style="color:#31748F"> function</span><span style="color:#EBBCBA"> BasicExample</span><span style="color:#908CAA">()</span><span style="color:#908CAA"> {</span></span>
+<span class="line"><span style="color:#31748F">  const</span><span style="color:#908CAA"> {</span></span>
+<span class="line"><span style="color:#E0DEF4;font-style:italic">    register</span><span style="color:#908CAA">,</span></span>
+<span class="line"><span style="color:#E0DEF4;font-style:italic">    handleSubmit</span><span style="color:#908CAA">,</span></span>
+<span class="line"><span style="color:#EBBCBA;font-style:italic">    formState</span><span style="color:#908CAA">:</span><span style="color:#908CAA"> {</span><span style="color:#E0DEF4;font-style:italic"> errors</span><span style="color:#908CAA"> },</span></span>
+<span class="line"><span style="color:#908CAA">  }</span><span style="color:#31748F"> =</span><span style="color:#EBBCBA"> usePersistentForm</span><span style="color:#908CAA">&#x3C;</span><span style="color:#9CCFD8">Inputs</span><span style="color:#908CAA">></span><span style="color:#E0DEF4">(</span><span style="color:#908CAA">{</span></span>
+<span class="line"><span style="color:#E0DEF4">    storageKey</span><span style="color:#908CAA">:</span><span style="color:#F6C177"> "contact-form"</span><span style="color:#908CAA">,</span></span>
+<span class="line"><span style="color:#908CAA">  }</span><span style="color:#E0DEF4">)</span><span style="color:#908CAA">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#31748F">  const</span><span style="color:#EBBCBA;font-style:italic"> onSubmit</span><span style="color:#31748F"> =</span><span style="color:#908CAA"> (</span><span style="color:#C4A7E7;font-style:italic">values</span><span style="color:#31748F">:</span><span style="color:#9CCFD8"> Inputs</span><span style="color:#908CAA">)</span><span style="color:#31748F"> =></span><span style="color:#908CAA"> {</span></span>
+<span class="line"><span style="color:#E0DEF4;font-style:italic">    toast</span><span style="color:#31748F">.</span><span style="color:#EBBCBA">success</span><span style="color:#E0DEF4">(</span><span style="color:#F6C177">`values </span><span style="color:#908CAA">${</span><span style="color:#E0DEF4;font-style:italic">JSON</span><span style="color:#31748F">.</span><span style="color:#EBBCBA">stringify</span><span style="color:#E0DEF4">(</span><span style="color:#E0DEF4;font-style:italic">values</span><span style="color:#908CAA">,</span><span style="color:#EBBCBA"> null</span><span style="color:#908CAA">,</span><span style="color:#EBBCBA"> 2</span><span style="color:#E0DEF4">)</span><span style="color:#908CAA">}</span><span style="color:#F6C177">`</span><span style="color:#E0DEF4">)</span><span style="color:#908CAA">;</span></span>
+<span class="line"><span style="color:#908CAA">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#31748F">  return</span><span style="color:#E0DEF4"> (</span></span>
+<span class="line"><span style="color:#6E6A86">    &#x3C;</span><span style="color:#9CCFD8">div</span><span style="color:#C4A7E7;font-style:italic"> className</span><span style="color:#31748F">=</span><span style="color:#F6C177">"max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md"</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#6E6A86">      &#x3C;</span><span style="color:#9CCFD8">h2</span><span style="color:#C4A7E7;font-style:italic"> className</span><span style="color:#31748F">=</span><span style="color:#F6C177">"text-2xl font-semibold mb-6 text-gray-800"</span><span style="color:#6E6A86">></span><span style="color:#E0DEF4">Contact Us</span><span style="color:#6E6A86">&#x3C;/</span><span style="color:#9CCFD8">h2</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#6E6A86">      &#x3C;</span><span style="color:#9CCFD8">form</span><span style="color:#C4A7E7;font-style:italic"> onSubmit</span><span style="color:#31748F">=</span><span style="color:#908CAA">{</span><span style="color:#EBBCBA">handleSubmit</span><span style="color:#E0DEF4">(</span><span style="color:#E0DEF4;font-style:italic">onSubmit</span><span style="color:#E0DEF4">)</span><span style="color:#908CAA">}</span><span style="color:#C4A7E7;font-style:italic"> className</span><span style="color:#31748F">=</span><span style="color:#F6C177">"space-y-4"</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#6E6A86">        &#x3C;</span><span style="color:#9CCFD8">div</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#6E6A86">          &#x3C;</span><span style="color:#9CCFD8">label</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">            htmlFor</span><span style="color:#31748F">=</span><span style="color:#F6C177">"name"</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">            className</span><span style="color:#31748F">=</span><span style="color:#F6C177">"block text-sm font-medium text-gray-700"</span></span>
+<span class="line"><span style="color:#6E6A86">          ></span></span>
+<span class="line"><span style="color:#E0DEF4">            Name</span></span>
+<span class="line"><span style="color:#6E6A86">          &#x3C;/</span><span style="color:#9CCFD8">label</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#6E6A86">          &#x3C;</span><span style="color:#9CCFD8">input</span></span>
+<span class="line"><span style="color:#908CAA">            {</span><span style="color:#31748F">...</span><span style="color:#EBBCBA">register</span><span style="color:#E0DEF4">(</span><span style="color:#F6C177">"name"</span><span style="color:#908CAA">,</span><span style="color:#908CAA"> {</span><span style="color:#E0DEF4"> required</span><span style="color:#908CAA">:</span><span style="color:#F6C177"> "Name is required"</span><span style="color:#908CAA"> }</span><span style="color:#E0DEF4">)</span><span style="color:#908CAA">}</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">            id</span><span style="color:#31748F">=</span><span style="color:#F6C177">"name"</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">            className</span><span style="color:#31748F">=</span><span style="color:#F6C177">"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-4 py-2"</span></span>
+<span class="line"><span style="color:#6E6A86">          /></span></span>
+<span class="line"><span style="color:#908CAA">          {</span><span style="color:#E0DEF4;font-style:italic">errors</span><span style="color:#31748F">.</span><span style="color:#E0DEF4;font-style:italic">name</span><span style="color:#31748F"> &#x26;&#x26;</span><span style="color:#E0DEF4"> (</span></span>
+<span class="line"><span style="color:#6E6A86">            &#x3C;</span><span style="color:#9CCFD8">p</span><span style="color:#C4A7E7;font-style:italic"> className</span><span style="color:#31748F">=</span><span style="color:#F6C177">"mt-1 text-sm text-red-600"</span><span style="color:#6E6A86">></span><span style="color:#908CAA">{</span><span style="color:#E0DEF4;font-style:italic">errors</span><span style="color:#31748F">.</span><span style="color:#E0DEF4;font-style:italic">name</span><span style="color:#31748F">.</span><span style="color:#E0DEF4;font-style:italic">message</span><span style="color:#908CAA">}</span><span style="color:#6E6A86">&#x3C;/</span><span style="color:#9CCFD8">p</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#E0DEF4">          )</span><span style="color:#908CAA">}</span></span>
+<span class="line"><span style="color:#6E6A86">        &#x3C;/</span><span style="color:#9CCFD8">div</span><span style="color:#6E6A86">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6E6A86">        &#x3C;</span><span style="color:#9CCFD8">div</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#6E6A86">          &#x3C;</span><span style="color:#9CCFD8">label</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">            htmlFor</span><span style="color:#31748F">=</span><span style="color:#F6C177">"email"</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">            className</span><span style="color:#31748F">=</span><span style="color:#F6C177">"block text-sm font-medium text-gray-700"</span></span>
+<span class="line"><span style="color:#6E6A86">          ></span></span>
+<span class="line"><span style="color:#E0DEF4">            Email</span></span>
+<span class="line"><span style="color:#6E6A86">          &#x3C;/</span><span style="color:#9CCFD8">label</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#6E6A86">          &#x3C;</span><span style="color:#9CCFD8">input</span></span>
+<span class="line"><span style="color:#908CAA">            {</span><span style="color:#31748F">...</span><span style="color:#EBBCBA">register</span><span style="color:#E0DEF4">(</span><span style="color:#F6C177">"email"</span><span style="color:#908CAA">,</span><span style="color:#908CAA"> {</span></span>
+<span class="line"><span style="color:#E0DEF4">              required</span><span style="color:#908CAA">:</span><span style="color:#F6C177"> "Email is required"</span><span style="color:#908CAA">,</span></span>
+<span class="line"><span style="color:#E0DEF4">              pattern</span><span style="color:#908CAA">:</span><span style="color:#908CAA"> {</span></span>
+<span class="line"><span style="color:#E0DEF4">                value</span><span style="color:#908CAA">:</span><span style="color:#F6C177"> /</span><span style="color:#31748F">\S+</span><span style="color:#F6C177">@</span><span style="color:#31748F">\S+\.\S+</span><span style="color:#F6C177">/</span><span style="color:#908CAA">,</span></span>
+<span class="line"><span style="color:#E0DEF4">                message</span><span style="color:#908CAA">:</span><span style="color:#F6C177"> "Invalid email address"</span><span style="color:#908CAA">,</span></span>
+<span class="line"><span style="color:#908CAA">              },</span></span>
+<span class="line"><span style="color:#908CAA">            }</span><span style="color:#E0DEF4">)</span><span style="color:#908CAA">}</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">            id</span><span style="color:#31748F">=</span><span style="color:#F6C177">"email"</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">            type</span><span style="color:#31748F">=</span><span style="color:#F6C177">"email"</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">            className</span><span style="color:#31748F">=</span><span style="color:#F6C177">"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-4 py-2"</span></span>
+<span class="line"><span style="color:#6E6A86">          /></span></span>
+<span class="line"><span style="color:#908CAA">          {</span><span style="color:#E0DEF4;font-style:italic">errors</span><span style="color:#31748F">.</span><span style="color:#E0DEF4;font-style:italic">email</span><span style="color:#31748F"> &#x26;&#x26;</span><span style="color:#E0DEF4"> (</span></span>
+<span class="line"><span style="color:#6E6A86">            &#x3C;</span><span style="color:#9CCFD8">p</span><span style="color:#C4A7E7;font-style:italic"> className</span><span style="color:#31748F">=</span><span style="color:#F6C177">"mt-1 text-sm text-red-600"</span><span style="color:#6E6A86">></span><span style="color:#908CAA">{</span><span style="color:#E0DEF4;font-style:italic">errors</span><span style="color:#31748F">.</span><span style="color:#E0DEF4;font-style:italic">email</span><span style="color:#31748F">.</span><span style="color:#E0DEF4;font-style:italic">message</span><span style="color:#908CAA">}</span><span style="color:#6E6A86">&#x3C;/</span><span style="color:#9CCFD8">p</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#E0DEF4">          )</span><span style="color:#908CAA">}</span></span>
+<span class="line"><span style="color:#6E6A86">        &#x3C;/</span><span style="color:#9CCFD8">div</span><span style="color:#6E6A86">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6E6A86">        &#x3C;</span><span style="color:#9CCFD8">div</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#6E6A86">          &#x3C;</span><span style="color:#9CCFD8">label</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">            htmlFor</span><span style="color:#31748F">=</span><span style="color:#F6C177">"message"</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">            className</span><span style="color:#31748F">=</span><span style="color:#F6C177">"block text-sm font-medium text-gray-700"</span></span>
+<span class="line"><span style="color:#6E6A86">          ></span></span>
+<span class="line"><span style="color:#E0DEF4">            Message</span></span>
+<span class="line"><span style="color:#6E6A86">          &#x3C;/</span><span style="color:#9CCFD8">label</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#6E6A86">          &#x3C;</span><span style="color:#9CCFD8">textarea</span></span>
+<span class="line"><span style="color:#908CAA">            {</span><span style="color:#31748F">...</span><span style="color:#EBBCBA">register</span><span style="color:#E0DEF4">(</span><span style="color:#F6C177">"message"</span><span style="color:#908CAA">,</span><span style="color:#908CAA"> {</span><span style="color:#E0DEF4"> required</span><span style="color:#908CAA">:</span><span style="color:#F6C177"> "Message is required"</span><span style="color:#908CAA"> }</span><span style="color:#E0DEF4">)</span><span style="color:#908CAA">}</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">            id</span><span style="color:#31748F">=</span><span style="color:#F6C177">"message"</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">            rows</span><span style="color:#31748F">=</span><span style="color:#908CAA">{</span><span style="color:#EBBCBA">4</span><span style="color:#908CAA">}</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">            className</span><span style="color:#31748F">=</span><span style="color:#F6C177">"mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 px-4 py-2"</span></span>
+<span class="line"><span style="color:#6E6A86">          >&#x3C;/</span><span style="color:#9CCFD8">textarea</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#908CAA">          {</span><span style="color:#E0DEF4;font-style:italic">errors</span><span style="color:#31748F">.</span><span style="color:#E0DEF4;font-style:italic">message</span><span style="color:#31748F"> &#x26;&#x26;</span><span style="color:#E0DEF4"> (</span></span>
+<span class="line"><span style="color:#6E6A86">            &#x3C;</span><span style="color:#9CCFD8">p</span><span style="color:#C4A7E7;font-style:italic"> className</span><span style="color:#31748F">=</span><span style="color:#F6C177">"mt-1 text-sm text-red-600"</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#908CAA">              {</span><span style="color:#E0DEF4;font-style:italic">errors</span><span style="color:#31748F">.</span><span style="color:#E0DEF4;font-style:italic">message</span><span style="color:#31748F">.</span><span style="color:#E0DEF4;font-style:italic">message</span><span style="color:#908CAA">}</span></span>
+<span class="line"><span style="color:#6E6A86">            &#x3C;/</span><span style="color:#9CCFD8">p</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#E0DEF4">          )</span><span style="color:#908CAA">}</span></span>
+<span class="line"><span style="color:#6E6A86">        &#x3C;/</span><span style="color:#9CCFD8">div</span><span style="color:#6E6A86">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6E6A86">        &#x3C;</span><span style="color:#9CCFD8">button</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">          type</span><span style="color:#31748F">=</span><span style="color:#F6C177">"submit"</span></span>
+<span class="line"><span style="color:#C4A7E7;font-style:italic">          className</span><span style="color:#31748F">=</span><span style="color:#F6C177">"w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"</span></span>
+<span class="line"><span style="color:#6E6A86">        ></span></span>
+<span class="line"><span style="color:#E0DEF4">          Submit</span></span>
+<span class="line"><span style="color:#6E6A86">        &#x3C;/</span><span style="color:#9CCFD8">button</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#6E6A86">      &#x3C;/</span><span style="color:#9CCFD8">form</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#6E6A86">    &#x3C;/</span><span style="color:#9CCFD8">div</span><span style="color:#6E6A86">></span></span>
+<span class="line"><span style="color:#E0DEF4">  )</span><span style="color:#908CAA">;</span></span>
+<span class="line"><span style="color:#908CAA">}</span></span></code></pre>
