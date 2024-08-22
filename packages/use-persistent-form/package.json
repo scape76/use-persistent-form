@@ -1,6 +1,6 @@
 {
   "name": "use-persistent-form",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A hook for react-hook-form that persists form data to storage",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
