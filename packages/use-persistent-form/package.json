@@ -2,8 +2,9 @@
   "name": "use-persistent-form",
   "version": "1.0.2",
   "description": "A hook for react-hook-form that persists form data to storage",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -24,10 +25,9 @@
     "type": "git",
     "url": "https://github.com/scape76/use-persistent-form.git"
   },
-  "type": "module",
   "scripts": {
     "dev": "tsc -w -p tsconfig.json",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsup",
     "preview": "vite preview"
   },
   "exports": {
