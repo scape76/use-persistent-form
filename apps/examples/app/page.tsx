@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { Tabber } from "./components/examples/tabber";
 import fs from "fs";
+
+export const metadata: Metadata = {
+  title: "use-persistent-form Examples",
+  description:
+    "View examples of using use-persistent-form with Shadcn UI and basic HTML forms.",
+};
 
 interface HomeProps {
   searchParams: {

@@ -1,6 +1,13 @@
 import { CodeBlock } from "@/components/code-block";
 import { CopyInstallationButton } from "@/components/copy-installation-button";
 import fs from "fs";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Install use-persistent-form",
+  description:
+    "Learn how to install and use the use-persistent-form package in your React applications.",
+};
 
 export const dynamic = "force-static";
 
